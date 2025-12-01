@@ -3,7 +3,6 @@ import input
 # lists = input.sample
 lists = input.input
 lists = lists.split("\n")[1:-1]
-print(lists)
 
 dials = [(-1 if a[0] == 'L' else 1,int(a[1:]))  for a in lists]
 cur = 50
@@ -11,7 +10,7 @@ cur = 50
 zeros = 0
 
 for dial in dials:
-    zeros += (dial[1] // 100)
+    zeros += dial[1] // 100
     distance = dial[1] % 100
     pos = cur + dial[0] * distance
     if pos == 0:
